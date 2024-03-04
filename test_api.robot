@@ -1,11 +1,12 @@
 *** Settings ***
 Library  RequestsLibrary
-Create Session  api_session  http://localhost:8080
+
 *** Test Cases ***
 Test true when x is 17
     [Documentation]  Test the /plus/a/b endpoint of the API
     [Tags]  API
       # Adjust the URL based on your API's address and port
+    Create Session  api_session  http://localhost:8080
 
     # Test case for positive numbers
     ${response}  GET On Session  api_session  /is_prime/17
@@ -17,6 +18,7 @@ Test false when x is 36
     [Documentation]  Test the /plus/a/b endpoint of the API
     [Tags]  API
       # Adjust the URL based on your API's address and port
+    Create Session  api_session  http://localhost:8080
 
     # Test case for positive numbers
     ${response}  GET On Session  api_session  /is_prime/36
@@ -29,6 +31,7 @@ Test True when x is 13219
     [Documentation]  Test the /plus/a/b endpoint of the API
     [Tags]  API
       # Adjust the URL based on your API's address and port
+    Create Session  api_session  http://localhost:8080
 
     # Test case for positive numbers
     ${response}  GET On Session  api_session  /is_prime/13219
